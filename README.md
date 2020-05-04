@@ -104,3 +104,9 @@ The rust `fs::read_to_string` function preserves the BOM when reading UTF-8 (no 
 
 The yaml-rust library chokes when parsing a document that starts with the BOM, incorrectly treating
 the rest of a the line as a string literal.
+
+A 2 minute googling around revealed that the story around
+
+It's not clear whether that should be "fs"'s job or "yaml-rust"'s job.
+A random googling around also revealed an open issue around stripping BOMs from string inputs
+https://github.com/rust-lang/rfcs/issues/2428
